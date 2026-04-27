@@ -14,7 +14,7 @@ From implementing SLAM algorithms from scratch to training quadruped walking pol
 | **Reinforcement Learning** | Sim2Real quadruped (Isaac Lab → hardware), self-balancing robot (MuJoCo → TFLite MCU) |
 | **Multi-Agent Systems** | MAPF with CBS + MARL (transformer communication, CBS-bootstrapped curriculum) |
 | **Swarm Robotics** | Decentralised drone swarm cooperative transport (no inter-drone communication) |
-| **Edge AI** | YOLO on Raspberry Pi, ONNX → TFLite int8 at 200Hz on Teensy 4.1 |
+| **Edge AI** | YOLO on Raspberry Pi, ONNX → TFLite int8 on Teensy 4.1 |
 | **Autonomous Agents** | LangGraph SRE agent for self-healing Kubernetes clusters |
 
 ---
@@ -43,7 +43,7 @@ Multi-agent path finding: optimal CBS baseline + MAPPO with transformer attentio
 Full SLAM stack from scratch: Taubin circle fitting for landmark detection, Mahalanobis-gated data association, EKF predict/correct loop. ROS 2 · C++.
 
 ### [Self-Balancing Robot RL](https://github.com/KyawLinnKhant/IMP_MJC_RL)
-MuJoCo simulation to PPO policy to ONNX to TFLite int8 to Teensy 4.1 at 200Hz. Full sim-to-real pipeline with algorithm comparison.
+MuJoCo simulation → PPO → ONNX → TFLite int8 → Teensy 4.1. Full sim-to-real pipeline with 5-algorithm comparison.
 
 ### [Drone Swarm Transport](https://github.com/KyawLinnKhant/Swarm_Drones_ROSCS)
 Decentralised multi-UAV cooperative payload transport. No explicit inter-drone communication — emergent coordination via layered behaviours.
@@ -55,7 +55,7 @@ Autonomous AI agent that monitors, diagnoses, and self-heals Kubernetes clusters
 
 ## Currently
 
-Training MARL agents on procedurally generated MAPF environments and exploring CBS-bootstrapped curriculum learning for multi-agent coordination.
+Building MAPF-CBS + MARL: CBS-bootstrapped curriculum where an optimal planner teaches RL agents to coordinate, then phases itself out. Agents learn emergent collision avoidance via transformer attention — no hand-coded rules.
 
 Open to **Robotics Engineer / Research Engineer / Applied AI** roles in **Singapore, Australia, New Zealand, Thailand**.
 
