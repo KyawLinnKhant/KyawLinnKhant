@@ -13,7 +13,7 @@ From implementing SLAM algorithms from scratch to training quadruped walking pol
 | **SLAM / Perception** | EKF SLAM (TurtleBot3), 2D LiDAR landmark detection, Taubin circle fitting |
 | **Reinforcement Learning** | Sim2Real quadruped (Isaac Lab → hardware), self-balancing robot (MuJoCo → TFLite MCU) |
 | **Multi-Agent Systems** | MAPF with CBS + MARL (transformer communication, CBS-bootstrapped curriculum) |
-| **Swarm Robotics** | Decentralised drone swarm cooperative transport (no inter-drone communication) |
+| **Swarm Robotics** | Camera+lidar unknown-maze mapping, then cooperative tetromino transport (MuJoCo) |
 | **Edge AI** | YOLO on Raspberry Pi, ONNX → TFLite int8 on Teensy 4.1 |
 | **Autonomous Agents** | LangGraph SRE agent for self-healing Kubernetes clusters |
 
@@ -45,8 +45,8 @@ Full SLAM stack from scratch: Taubin circle fitting for landmark detection, Maha
 ### [Self-Balancing Robot RL](https://github.com/KyawLinnKhant/IMP_MJC_RL)
 MuJoCo simulation → PPO → ONNX → TFLite int8 → Teensy 4.1. Full sim-to-real pipeline with 5-algorithm comparison.
 
-### [Drone Swarm Transport](https://github.com/KyawLinnKhant/Swarm_Drones_ROSCS)
-Decentralised multi-UAV cooperative payload transport. No explicit inter-drone communication — emergent coordination via layered behaviours.
+### [TetraSwarm — Maze Mapping & Transport](https://github.com/KyawLinnKhant/TetraSwarm_Drones_MJC)
+A drone swarm maps an unknown maze with camera + lidar fusion, then cooperatively carries Tetris payloads to the furthest reachable corner. MuJoCo · Python.
 
 ### [Chameleon-SRE](https://github.com/KyawLinnKhant/Chameleon_SRE)
 Autonomous AI agent that monitors, diagnoses, and self-heals Kubernetes clusters using LangGraph + local LLM (Ollama). 100% local, zero cloud cost.
